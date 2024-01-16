@@ -1,15 +1,17 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 // * This is the mongodb Atlas connection link
-const dbConnect = 'mongodb+srv://taskeen5099:AY2r0MVTD27aMq44@cluster0.dnawuou.mongodb.net/?retryWrites=true&w=majority';
+const dbConnect = process.env.db_link;
 
 // * Theses are the parameters
-const connectionParams = {
-    useNewUrlParser: true, useUnifiedTopology: true,
-};
+// const connectionParams = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// };
 
 // * This is the mongodb Atlas connection
-mongoose.connect(dbConnect, connectionParams).then(() => {
+mongoose.connect(dbConnect).then(() => {
 
     console.log('Hurrah! MongoDB connection successfully established :)');
 
